@@ -10,3 +10,12 @@
   font-family: 'Fira Code', monospace;
 }
 
+#canvas {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #161616;
+}
+
