@@ -11,7 +11,7 @@ const Canvas = () => {
     canvas.width = W;
     canvas.height = H;
 
-    const mp = 50;
+    const mp = 20;
     const particles = [];
 
     for (let i = 0; i < mp; i++) {
