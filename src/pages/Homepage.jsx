@@ -28,14 +28,16 @@ const Homepage = () => {
       wheelSpeed: -1,
       type: "wheel,touch",
       onUp: () => {
-        if (currentSection.current > 0 && !animating.current) {
-          goToSection(-1);
+        if (
+          currentSection.current < sections.length - 1 &&
+          !animating.current
+        ) {
+          goToSection(1);
         }
       },
       onDown: () => {
         console.log(sections.length);
-        if (currentSection.current < sections.length - 1 && !animating.current)
-          goToSection(1);
+        if (currentSection.current > 0 && !animating.current) goToSection(-1);
       },
     });
     // function next() {
