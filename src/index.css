@@ -18,3 +18,9 @@
   left: 0;
   background-color: #161616;
 }
+section {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  visibility: hidden;
+}

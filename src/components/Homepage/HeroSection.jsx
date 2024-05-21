@@ -5,15 +5,11 @@ import Canvas from "./Canvas";
 
 const HeroSection = () => {
   return (
-    <div className="section hero">
-      <div className="canvas-container opacity-0">
-        <Canvas />
-      </div>
+    <section className="section hero visible">
       <div
-        className="w-full h-[100vh] hero-container"
+        className="hero-container h-full"
         style={{ backgroundColor: primaryColor }}
       >
-        <Navbar />
         <div className="w-full h-full flex justify-center items-center">
           <div className="flex flex-col items-center">
             <div className="overflow-hidden profile-overflow">
@@ -55,7 +51,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
