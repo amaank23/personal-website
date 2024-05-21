@@ -5,6 +5,11 @@ import gsap from "gsap";
 import HeroSection from "../components/Homepage/HeroSection";
 import AboutSection from "../components/Homepage/AboutSection";
 import { primaryColor } from "../utils/utils";
+import Canvas from "../components/Homepage/Canvas";
+import Navbar from "../components/Navbar/Navbar";
+import ScrollToPlugin from "gsap/ScrollToPlugin";
+gsap.registerPlugin(ScrollToPlugin);
+
 gsap.registerPlugin(ScrollTrigger);
 const Homepage = () => {
   useGSAP(() => {
@@ -35,6 +40,7 @@ const Homepage = () => {
 
     const profileTimeline = gsap
       .timeline({ paused: true })
+      .addLabel("hero-section")
       .to(".profile-container img, .line, .logo, .nav-menu", {
         opacity: 0,
         duration: 0.1,
@@ -43,25 +49,40 @@ const Homepage = () => {
       .to(".profile-container", { scale: percentIncrease, duration: 0.2 }, "<")
 
       .to(".hero-container", { backgroundColor: primaryColor, duration: 0.2 })
-      .to(".profile-container", { opacity: 0, duration: 0.2 })
-      .to(".logo, .nav-menu", { opacity: 0, yPercent: 110, duration: 0.1 })
-      .to(".logo, .nav-menu", { yPercent: 0, opacity: 1, duration: 0.1 })
-      .to(".hero", { display: "none" });
+      .to(".hero", { opacity: 0, duration: 0.2 })
+      .to(".hero", { xPercent: 100, duration: 0.2 })
+      .to(".line, .logo, .nav-menu", {
+        opacity: 1,
+        duration: 0.1,
+      })
+      .addLabel("about-section");
 
     function scrollFunction() {
       ScrollTrigger.create({
-        trigger: ".hero-container",
+        trigger: ".hero",
         animation: profileTimeline,
         start: "top top",
         pin: true,
-        scrub: 2,
+        scrub: 1,
+        snap: {
+          snapTo: "labelsDirectional",
+          duration: 1,
+          delay: 0.01,
+        },
+        onSnapComplete: () => {
+          gsap.to(window, { scrollTo: ".about", duration: 0.2 });
+        },
       });
     }
   });
   return (
     <div>
+      <Navbar />
+      <div className="canvas-container opacity-0">
+        <Canvas />
+      </div>
       <HeroSection />
-      {/* <AboutSection /> */}
+      <AboutSection />
     </div>
   );
 };

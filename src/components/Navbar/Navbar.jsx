@@ -4,7 +4,7 @@ import NavLink from "./NavLink";
 
 const Navbar = () => {
   return (
-    <div className="absolute w-full top-6">
+    <div className="fixed w-full top-6 z-50">
       <Container>
         <div className="flex justify-between items-center overflow-hidden">
           <div className="logo">
@@ -14,10 +14,10 @@ const Navbar = () => {
             </h2>
           </div>
           <div className="gap-7 flex justify-center nav-menu">
-            <NavLink label={'Home'} />
-            <NavLink label={'About'} />
-            <NavLink label={'Work'} />
-            <NavLink label={'Contact'} />
+            <NavLink label={"Home"} />
+            <NavLink label={"About"} />
+            <NavLink label={"Work"} />
+            <NavLink label={"Contact"} />
           </div>
         </div>
       </Container>
