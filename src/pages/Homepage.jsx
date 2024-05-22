@@ -21,7 +21,6 @@ const Homepage = () => {
 
   useGSAP(() => {
     const sections = document.querySelectorAll("section");
-    console.log(sections);
     onStartAnimation(gsap);
     Observer.create({
       target: window,
@@ -36,7 +35,6 @@ const Homepage = () => {
         }
       },
       onDown: () => {
-        console.log(sections.length);
         if (currentSection.current > 0 && !animating.current) goToSection(-1);
       },
     });
@@ -45,7 +43,7 @@ const Homepage = () => {
       const currentIndex = currentSection.current;
       const index = direction === 1 ? currentIndex + 1 : currentIndex - 1;
 
-      const timeline = gsap
+      gsap
         .timeline({ onComplete: () => (animating.current = false) })
         .to(sections[currentIndex], {
           yPercent: direction === 1 ? -100 : 100,
@@ -62,6 +60,13 @@ const Homepage = () => {
       currentSection.current = index;
     }
   });
+
+  function onClickNavigate(gotToSectionIndex) {
+    const currentSectionIndex = currentSection.current;
+    const direction = gotToSectionIndex - currentSectionIndex;
+    const noOfMovement = Math.abs(direction);
+    if (direction === 0) return;
+  }
   return (
     <div>
       <div className="canvas-container opacity-0">
