@@ -40,21 +40,6 @@ const Homepage = () => {
         if (currentSection.current > 0 && !animating.current) goToSection(-1);
       },
     });
-    // function next() {
-    //   gsap.to(window, {
-    //     duration: 2,
-    //     scrollTo: window.innerHeight * currentSection.current,
-    //   });
-    //   currentSection.current += 1;
-    // }
-
-    // function previous() {
-    //   gsap.to(window, {
-    //     duration: 2,
-    //     scrollTo: window.innerHeight * (currentSection.current - 2),
-    //   });
-    //   currentSection.current -= 1;
-    // }
     function goToSection(direction) {
       animating.current = true;
       const currentIndex = currentSection.current;
