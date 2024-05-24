@@ -11,7 +11,7 @@ import { Observer } from "gsap/Observer";
 import ScrollToPlugin from "gsap/ScrollToPlugin";
 import WorkSection from "../components/Homepage/WorkSection";
 import ContactSection from "../components/Homepage/ContactSection";
-import SplitType from "split-type";
+import Anim from "./../assets/anim.gif";
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(Observer);
 gsap.registerPlugin(ScrollToPlugin);
@@ -87,6 +87,14 @@ const Homepage = () => {
       <AboutSection />
       <WorkSection />
       <ContactSection />
+      <div className="fixed bottom-0 right-0 opacity-0 wheel-down">
+        <div id="scroll-wrapper">
+          <div id="scroll-wrapper-inner">
+            <div id="scroll-title">Scroll</div>
+            <div id="scroll-down"></div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
