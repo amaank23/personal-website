@@ -5,9 +5,9 @@ import Canvas from "./Canvas";
 
 const HeroSection = () => {
   return (
-    <section className="section hero">
+    <section className="section hero visible">
       <div
-        className="w-full h-[100vh] hero-container"
+        className="hero-container h-full"
         style={{ backgroundColor: primaryColor }}
       >
         <div className="w-full h-full flex justify-center items-center">
