@@ -1,8 +1,11 @@
 import { PropTypes } from "prop-types";
 
-const NavLink = ({ label }) => {
+const NavLink = ({ label, onClickNavigate }) => {
   return (
-    <span className="text-lg cursor-pointer text-white">
+    <span
+      className="text-lg cursor-pointer text-white"
+      onClick={onClickNavigate}
+    >
       {label}
     </span>
   );

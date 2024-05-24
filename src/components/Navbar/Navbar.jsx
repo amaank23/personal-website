@@ -2,7 +2,7 @@ import { attentionColor } from "../../utils/utils";
 import Container from "../Containers/Container";
 import NavLink from "./NavLink";
 
-const Navbar = () => {
+const Navbar = ({ onClickNavigate }) => {
   return (
     <div className="fixed w-full top-6 z-50">
       <Container>
@@ -14,10 +14,22 @@ const Navbar = () => {
             </h2>
           </div>
           <div className="gap-7 flex justify-center nav-menu">
-            <NavLink label={"Home"} />
-            <NavLink label={"About"} />
-            <NavLink label={"Work"} />
-            <NavLink label={"Contact"} />
+            <NavLink
+              label={"Home"}
+              onClickNavigate={() => onClickNavigate(0)}
+            />
+            <NavLink
+              label={"About"}
+              onClickNavigate={() => onClickNavigate(1)}
+            />
+            <NavLink
+              label={"Work"}
+              onClickNavigate={() => onClickNavigate(2)}
+            />
+            <NavLink
+              label={"Contact"}
+              onClickNavigate={() => onClickNavigate(3)}
+            />
           </div>
         </div>
       </Container>
