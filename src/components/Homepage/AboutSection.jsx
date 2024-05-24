@@ -5,7 +5,7 @@ import SplitType from "split-type";
 
 const AboutSection = () => {
   return (
-    <section className="section flex flex-col justify-center about py-36">
+    <section className="section flex flex-col justify-center about py-36 bg-[#161616]">
       <div className="flex gap-16 border-t border-white pt-10 mx-[3.75rem]">
         <div className="w-[40%]">
           <div className="h-[105px] overflow-hidden ">

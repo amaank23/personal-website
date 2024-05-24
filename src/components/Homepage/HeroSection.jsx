@@ -5,7 +5,7 @@ import Canvas from "./Canvas";
 
 const HeroSection = () => {
   return (
-    <section className="section hero visible">
+    <section className="section hero visible bg-black">
       <div
         className="hero-container h-full"
         style={{ backgroundColor: primaryColor }}

@@ -22,7 +22,7 @@ const Homepage = () => {
 
   useGSAP(() => {
     const sections = document.querySelectorAll("section");
-    onStartAnimation(gsap);
+    // onStartAnimation(gsap);
     Observer.create({
       target: window,
       wheelSpeed: -1,
@@ -78,10 +78,10 @@ const Homepage = () => {
     animating.current = false;
   }
   return (
-    <div>
-      <div className="canvas-container opacity-0">
+    <div className="bg-black">
+      {/* <div className="canvas-container opacity-0">
         <Canvas />
-      </div>
+      </div> */}
       <Navbar onClickNavigate={onClickNavigate} />
       <HeroSection />
       <AboutSection />
