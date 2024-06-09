@@ -1,9 +1,12 @@
-import { attentionColor, primaryColor } from "../../utils/utils";
+import { useContext } from "react";
+import { attentionColor, primaryColor, themeObject } from "../../utils/utils";
 import Navbar from "../Navbar/Navbar";
 import PersonalImage from "./../../assets/personal-image.png";
 import Canvas from "./Canvas";
+import { ThemeContext } from "../../context/themeContext";
 
 const HeroSection = () => {
+  const themeContext = useContext(ThemeContext);
   return (
     <section className="section hero visible">
       <div
@@ -34,17 +37,32 @@ const HeroSection = () => {
               </span>
             </div>
             <div className="pt-7 overflow-hidden relative">
-              <span className="text-white text-5xl font-bold pt-3 w-fit text-center  line block">
+              <span
+                className="text-white text-5xl font-bold pt-3 w-fit text-center  line block"
+                style={{
+                  color: themeObject[themeContext.theme].textColor,
+                }}
+              >
                 I’m Aman,
               </span>
             </div>
             <div className="overflow-hidden relative">
-              <span className="text-white text-5xl font-bold pt-3 text-center leading-[127%] line block">
+              <span
+                className="text-white text-5xl font-bold pt-3 text-center leading-[127%] line block"
+                style={{
+                  color: themeObject[themeContext.theme].textColor,
+                }}
+              >
                 a Full Stack Developer
               </span>
             </div>
             <div className="pt-7 overflow-hidden relative">
-              <p className="text-xl text-white pt-9 text-center line block">
+              <p
+                className="text-xl text-white pt-9 text-center line block"
+                style={{
+                  color: themeObject[themeContext.theme].textColor,
+                }}
+              >
                 I develop websites and web apps
               </p>
             </div>

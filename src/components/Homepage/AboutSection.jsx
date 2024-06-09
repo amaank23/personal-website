@@ -1,9 +1,12 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import React from "react";
+import React, { useContext } from "react";
 import SplitType from "split-type";
+import { themeObject } from "../../utils/utils";
+import { ThemeContext } from "../../context/themeContext";
 
 const AboutSection = () => {
+  const themeContext = useContext(ThemeContext);
   return (
     <section className="section flex flex-col justify-center about py-36">
       <div className="flex gap-16 border-t border-white pt-10 mx-[3.75rem]">
@@ -15,7 +18,12 @@ const AboutSection = () => {
           </div>
         </div>
         <div className="flex justify-center w-full">
-          <p className="text-white text-[1.625rem] 2xl:text-[38px] max-w-[1100px] about-desc">
+          <p
+            className="text-white text-[1.625rem] 2xl:text-[38px] max-w-[1100px] about-desc"
+            style={{
+              color: themeObject[themeContext.theme].textColor,
+            }}
+          >
             I am a highly skilled React.js Developer and Node js Developer with
             a mid-level experience in designing and developing complex web
             applications. Proficient in utilizing ReactJs, NodeJs and their

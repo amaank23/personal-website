@@ -1,7 +1,16 @@
 export const primaryColor = "#161616";
 export const secondaryColor = "#1A1A1A";
 export const attentionColor = "#FF5925";
-
+export const themeObject = {
+  dark: {
+    textColor: "white",
+    bgColor: "black",
+  },
+  light: {
+    textColor: "black",
+    bgColor: "white",
+  },
+};
 export function onStartAnimation(gsap) {
   Math.getDistance = function (x1, y1, x2, y2) {
     var xs = x2 - x1,

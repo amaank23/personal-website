@@ -1,11 +1,13 @@
-import { useEffect, useRef } from 'react';
+import { useContext, useEffect, useRef } from "react";
+import { ThemeContext } from "../../context/themeContext";
+import { themeObject } from "../../utils/utils";
 
 const Canvas = () => {
   const canvasRef = useRef(null);
-
+  const themeContext = useContext(ThemeContext);
   useEffect(() => {
     const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     const W = window.innerWidth;
     const H = window.innerHeight;
     canvas.width = W;
@@ -27,7 +29,7 @@ const Canvas = () => {
 
     const draw = () => {
       ctx.clearRect(0, 0, W, H);
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+      ctx.fillStyle = themeObject[themeContext.theme].textColor;
       ctx.beginPath();
 
       for (let i = 0; i < mp; i++) {
@@ -65,9 +67,15 @@ const Canvas = () => {
     const animationLoop = setInterval(draw, 33);
 
     return () => clearInterval(animationLoop);
-  }, []);
+  }, [themeContext.theme]);
 
-  return <canvas ref={canvasRef} id='canvas' />;
+  return (
+    <canvas
+      ref={canvasRef}
+      id="canvas"
+      style={{ backgroundColor: themeObject[themeContext.theme].bgColor }}
+    />
+  );
 };
 
 export default Canvas;

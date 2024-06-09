@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../../context/themeContext";
+import { themeObject } from "../../utils/utils";
 
 const ContactSection = () => {
+  const themeContext = useContext(ThemeContext);
+
   return (
     <section className="section contact flex justify-center items-center">
       <div>
-        <h2 className="text-white text-[1.75rem] font-bold max-w-[366px] text-center mb-[3.3125rem]">
+        <h2
+          className="text-white text-[1.75rem] font-bold max-w-[366px] text-center mb-[3.3125rem]"
+          style={{
+            color: themeObject[themeContext.theme].textColor,
+          }}
+        >
           Take A Coffee & Chat With Me.
         </h2>
         <a
