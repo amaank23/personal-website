@@ -16,20 +16,21 @@ const WorkSection = () => {
             "Our project is an eCommerce web application built using the MERN (MongoDB, Express, React, Node.js) stack. "
           }
           tech={["ReactJs", "ExpressJs", "MongoDb", "NodeJs"]}
+          githubUrl="https://github.com/amaank23/martket-MERN-ecommerce"
         />
         <WorkCard
           title={"Blog Website with Next js"}
           desc={
-            "Our project is an eCommerce web application built using the MERN (MongoDB, Express, React, Node.js) stack. "
+            "Our project is an blog web application built using the NextJs. "
           }
           tech={["ReactJs", "NextJs"]}
+          githubUrl="https://github.com/amaank23/next-blog-app"
         />
         <WorkCard
           title={"Google Clone App React Js"}
-          desc={
-            "Our project is an eCommerce web application built using the MERN (MongoDB, Express, React, Node.js) stack. "
-          }
+          desc={"Our project is an Google Clone built using ReactJs. "}
           tech={["ReactJs"]}
+          githubUrl="https://github.com/amaank23/google-react-clone"
         />
       </div>
     </section>

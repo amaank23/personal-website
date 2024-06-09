@@ -2,16 +2,21 @@ import React from "react";
 import FolderIcon from "./../../assets/folder-icon.svg";
 import GithubIcon from "./../../assets/github-icon.svg";
 import RedirectIcon from "./../../assets/redirect-icon.png";
-const WorkCard = ({ title, desc, tech }) => {
+const WorkCard = ({ title, desc, tech, githubUrl }) => {
+  function onGithubIconClick(url) {
+    window.open(url, "_blank", "noreferrer");
+  }
   return (
     <div className="bg-[#272727] py-[2.25rem] px-[1.625rem]">
       <div className="flex justify-between items-center">
         <div>
           <img src={FolderIcon} alt="" />
         </div>
-        <div className="flex items-center gap-3">
+        <div
+          className="flex items-center gap-3 cursor-pointer"
+          onClick={() => onGithubIconClick(githubUrl)}
+        >
           <img src={GithubIcon} alt="" />
-          <img src={RedirectIcon} alt="" />
         </div>
       </div>
       <div className="pt-[3.4375rem]">
