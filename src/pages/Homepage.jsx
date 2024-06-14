@@ -12,6 +12,7 @@ import ScrollToPlugin from "gsap/ScrollToPlugin";
 import WorkSection from "../components/Homepage/WorkSection";
 import ContactSection from "../components/Homepage/ContactSection";
 import Anim from "./../assets/anim.gif";
+import SkillsSection from "../components/Homepage/SkillsSection";
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(Observer);
 gsap.registerPlugin(ScrollToPlugin);
@@ -85,6 +86,7 @@ const Homepage = () => {
       <Navbar onClickNavigate={onClickNavigate} />
       <HeroSection />
       <AboutSection />
+      <SkillsSection />
       <WorkSection />
       <ContactSection />
       <div className="fixed bottom-0 right-0 opacity-0 wheel-down">
