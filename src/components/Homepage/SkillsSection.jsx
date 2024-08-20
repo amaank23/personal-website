@@ -13,13 +13,14 @@ const SkillsSection = () => {
           </div>
         </div>
         <div className="flex flex-col gap-8 justify-center w-full">
-          <Skill name={"Html"} percentage={"20%"} />
-          <Skill name={"CSS"} percentage={"20%"} />
-          <Skill name={"Javascript"} percentage={"20%"} />
-          <Skill name={"React Js"} percentage={"20%"} />
-          <Skill name={"Node Js"} percentage={"20%"} />
-          <Skill name={"PosgresQl"} percentage={"20%"} />
-          <Skill name={"MongoDB"} percentage={"20%"} />
+          <Skill name={"Html"} percentage={"80%"} />
+          <Skill name={"CSS"} percentage={"80%"} />
+          <Skill name={"Javascript"} percentage={"90%"} />
+          <Skill name={"React Js"} percentage={"85%"} />
+          <Skill name={"Node Js"} percentage={"80%"} />
+          <Skill name={"ExpressJs"} percentage={"80%"} />
+          <Skill name={"PosgresQl"} percentage={"70%"} />
+          <Skill name={"MongoDB"} percentage={"65%"} />
         </div>
       </div>
     </section>
