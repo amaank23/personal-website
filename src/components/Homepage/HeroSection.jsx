@@ -9,10 +9,7 @@ const HeroSection = () => {
   const themeContext = useContext(ThemeContext);
   return (
     <section className="section hero visible">
-      <div
-        className="hero-container h-full"
-        style={{ backgroundColor: primaryColor }}
-      >
+      <div className="hero-container h-full">
         <div className="w-full h-full flex justify-center items-center">
           <div className="flex flex-col items-center">
             <div className="overflow-hidden profile-overflow">

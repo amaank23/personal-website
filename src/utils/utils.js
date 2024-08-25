@@ -32,7 +32,6 @@ export function onStartAnimation(gsap) {
     })
     .from(".nav-menu", { yPercent: 110 })
     .from(".logo", { yPercent: 110 }, "<")
-    .to(".canvas-container", { autoAlpha: 1 })
-    .to(".hero-container", { backgroundColor: "transparent", duration: 0 })
+    // .to(".canvas-container", { autoAlpha: 1 })
     .to(".wheel-down", { autoAlpha: 1 }, "+=1");
 }
