@@ -3,6 +3,7 @@ import { attentionColor, themeObject } from "../../utils/utils";
 import Container from "../Containers/Container";
 import NavLink from "./NavLink";
 import { ThemeContext } from "../../context/themeContext";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = ({ onClickNavigate }) => {
   const themeContext = useContext(ThemeContext);
@@ -11,7 +12,7 @@ const Navbar = ({ onClickNavigate }) => {
       <Container>
         <div className="flex justify-between items-center overflow-hidden">
           <div className="logo">
-            <h2 className="text-[1.875em] font-medium text-white">
+            <h2 className="text-[1.875rem] font-medium text-white">
               <span style={{ color: attentionColor }}>{"<"}</span>
               <span
                 style={{ color: themeObject[themeContext.theme].textColor }}
@@ -21,7 +22,8 @@ const Navbar = ({ onClickNavigate }) => {
               <span style={{ color: attentionColor }}>{" />"}</span>
             </h2>
           </div>
-          <div className="gap-7 flex justify-center nav-menu items-center">
+          <NavbarMobile />
+          <div className="gap-7 justify-center nav-menu items-center hidden md:flex">
             <NavLink
               label={"Home"}
               onClickNavigate={() => onClickNavigate(0)}
@@ -48,6 +50,16 @@ const Navbar = ({ onClickNavigate }) => {
           </div>
         </div>
       </Container>
+    </div>
+  );
+};
+
+const NavbarMobile = () => {
+  return (
+    <div className="md:hidden">
+      <div className="w-[60px] h-[60px] bg-attention flex justify-center items-center rounded-full">
+        <GiHamburgerMenu color="#fff" size={40} />
+      </div>
     </div>
   );
 };

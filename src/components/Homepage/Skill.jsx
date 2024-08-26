@@ -6,7 +6,7 @@ import { themeObject } from "../../utils/utils";
 const Skill = ({ name, percentage }) => {
   const themeContext = useContext(ThemeContext);
   return (
-    <div className="flex gap-5 items-center">
+    <div className="flex flex-col md:flex-row gap-5 items-center">
       <h4
         className="text-lg w-[106px]"
         style={{ color: themeObject[themeContext.theme].textColor }}
@@ -15,7 +15,7 @@ const Skill = ({ name, percentage }) => {
       </h4>
       <div
         style={{ backgroundColor: "#ff5e5961" }}
-        className="w-[800px] h-[12px] relative"
+        className="w-full sm:w-[450px] md:w-[400px] xl:w-[800px] h-[12px] relative"
       >
         <div
           className="h-[12px]"

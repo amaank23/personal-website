@@ -9,8 +9,8 @@ const HeroSection = () => {
   const themeContext = useContext(ThemeContext);
   return (
     <section className="section hero visible">
-      <div className="hero-container h-full">
-        <div className="w-full h-full flex justify-center items-center">
+      <div className="hero-container h-full flex-grow">
+        <div className="w-full h-full flex justify-center items-center min-h-screen">
           <div className="flex flex-col items-center">
             <div className="overflow-hidden profile-overflow">
               <div
