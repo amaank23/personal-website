@@ -35,7 +35,7 @@ jobs:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/personal-website'
+    if: github.ref == 'refs/heads/new-version'
 
     steps:
       - name: Download artifact
