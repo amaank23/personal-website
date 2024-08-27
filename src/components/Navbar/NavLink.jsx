@@ -5,7 +5,7 @@ import { themeObject } from "../../utils/utils";
 
 const NavLink = ({ label, href, className, onClickNavigate = () => {} }) => {
   const scrollToSection = () => {
-    // onClickNavigate();
+    onClickNavigate();
     document.getElementById(href).scrollIntoView({ behavior: "smooth" });
   };
   const themeContext = useContext(ThemeContext);
