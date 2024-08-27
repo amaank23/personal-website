@@ -1,14 +1,12 @@
 import { useContext } from "react";
-import { attentionColor, primaryColor, themeObject } from "../../utils/utils";
-import Navbar from "../Navbar/Navbar";
+import { attentionColor, themeObject } from "../../utils/utils";
 import PersonalImage from "./../../assets/personal-image.png";
-import Canvas from "./Canvas";
 import { ThemeContext } from "../../context/themeContext";
 
 const HeroSection = () => {
   const themeContext = useContext(ThemeContext);
   return (
-    <section className="section hero visible">
+    <section className="section hero visible" id="home">
       <div className="hero-container h-full flex-grow">
         <div className="w-full h-full flex justify-center items-center min-h-screen">
           <div className="flex flex-col items-center">

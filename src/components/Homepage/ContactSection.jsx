@@ -6,7 +6,10 @@ const ContactSection = () => {
   const themeContext = useContext(ThemeContext);
 
   return (
-    <section className="section contact flex justify-center items-center">
+    <section
+      className="section contact flex justify-center items-center"
+      id="contact"
+    >
       <div>
         <h2
           className="text-white text-[1.75rem] font-bold max-w-[366px] text-center mb-[3.3125rem]"
