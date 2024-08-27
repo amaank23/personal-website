@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../../context/themeContext";
 import { themeObject } from "../../utils/utils";
 
-const NavLink = ({ label, href, className, onClickNavigate }) => {
+const NavLink = ({ label, href, className, onClickNavigate = () => {} }) => {
   const scrollToSection = () => {
     onClickNavigate();
     document.getElementById(href).scrollIntoView({ behavior: "smooth" });
