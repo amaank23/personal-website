@@ -1,0 +1,50 @@
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.skeleton.circular {
+  border-radius: 50%;
+}
+
+.skeleton.text {
+  transform: scale(1, 0.6);
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 1em;
+  border-radius: 4px;
+}
+
+.skeleton-shimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+.skeleton.dark {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.skeleton.light {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

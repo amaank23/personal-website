@@ -1,57 +1,83 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import FolderIcon from "./../../assets/folder-icon.svg";
 import GithubIcon from "./../../assets/github-icon.svg";
 import RedirectIcon from "./../../assets/redirect-icon.png";
 import { ThemeContext } from "../../context/themeContext";
 import { themeObject } from "../../utils/utils";
-const WorkCard = ({ title, desc, tech, githubUrl }) => {
-  function onGithubIconClick(url) {
-    window.open(url, "_blank", "noreferrer");
-  }
-  const themeContext = useContext(ThemeContext);
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import ProgressiveImage from "../ProgressiveImage/ProgressiveImage";
+import Skeleton from "../Skeleton/Skeleton";
+
+const WorkCard = ({
+  title,
+  desc,
+  tech,
+  githubUrl,
+  liveUrl,
+  image,
+  thumbnailImage,
+}) => {
+  const [isImageLoading, setIsImageLoading] = useState(true);
+
   return (
-    <div
-      className="py-[2.25rem] px-[1.625rem]"
-      style={{
-        backgroundColor: themeContext.theme === "dark" ? "#272727" : "#e5e5e5",
-      }}
-    >
-      <div className="flex justify-between items-center">
-        <div>
-          <img src={FolderIcon} alt="" />
-        </div>
-        <div
-          className="flex items-center gap-3 cursor-pointer"
-          onClick={() => onGithubIconClick(githubUrl)}
-        >
-          <img src={GithubIcon} alt="" />
-        </div>
-      </div>
-      <div className="pt-[3.4375rem]">
-        <h2
-          className="text-2xl mb-6"
-          style={{
-            color: themeObject[themeContext.theme].textColor,
-          }}
-        >
-          {title}
-        </h2>
-        <p
-          className="text-white text-base mb-[2.5rem] leading-[2.125rem]"
-          style={{
-            color: themeObject[themeContext.theme].textColor,
-          }}
-        >
-          {desc}
-        </p>
-        <div className="flex items-center gap-3">
-          {tech.map((item) => {
-            return (
-              <span key={item} className="text-xs text-[#878787]">
+    <div className="group relative overflow-hidden rounded-xl glass-effect hover-scale glow">
+      {/* Project Image with Loading State */}
+      <div className="relative h-[300px] w-full overflow-hidden rounded-t-xl">
+        {isImageLoading && (
+          <Skeleton
+            variant="rectangular"
+            width="100%"
+            height="100%"
+            className="absolute inset-0"
+          />
+        )}
+
+        <ProgressiveImage
+          src={image}
+          placeholderSrc={thumbnailImage}
+          alt={title}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          onLoad={() => setIsImageLoading(false)}
+        />
+
+        {/* Content Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background/90 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
+          <h3 className="text-2xl font-bold text-white mb-4">{title}</h3>
+          <p className="text-gray-300 mb-4">{desc}</p>
+
+          {/* Tech Stack */}
+          <div className="flex flex-wrap gap-2 mb-6">
+            {tech.map((item) => (
+              <span
+                key={item}
+                className="px-3 py-1 text-sm rounded-full glass-effect text-primary-light border border-primary/20"
+              >
                 {item}
               </span>
-            );
-          })}
+            ))}
+          </div>
+
+          {/* Links */}
+          <div className="flex gap-4">
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-primary transition-colors"
+            >
+              <FaGithub size={24} />
+            </a>
+            {liveUrl && (
+              <a
+                href={liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-primary transition-colors"
+              >
+                <FaExternalLinkAlt size={24} />
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </div>
