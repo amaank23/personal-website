@@ -1,13 +1,14 @@
 import React from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-
+import Ecommerce from "./../../assets/work-1.png";
+import LMS from "./../../assets/work-2.png";
 const WorkSection = () => {
   const projects = [
     {
       title: "E-commerce Platform with Admin Portal",
       description:
         "A full-featured e-commerce platform with an integrated admin portal for product management, order tracking, and user analytics. The platform supports secure authentication, dynamic product listings, a seamless checkout process, and payment gateway integration. The admin dashboard enables efficient inventory control and order fulfillment.",
-      image: "/projects/ecommerce.jpg",
+      image: Ecommerce,
       technologies: [
         "Next.js",
         "TypeScript",
@@ -15,26 +16,17 @@ const WorkSection = () => {
         "Paypal",
         "Tailwind CSS",
       ],
-      githubUrl: "https://github.com/yourusername/ecommerce",
+      githubUrl: "https://github.com/amaank23/ecommerce-platform",
       liveUrl: "",
     },
     {
-      title: "Task Management System",
+      title: "LMS (Learning Management System)",
       description:
         "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      image: "/projects/taskmanager.jpg",
-      technologies: ["React", "Node.js", "Socket.io", "MongoDB", "Express"],
-      githubUrl: "https://github.com/yourusername/taskmanager",
-      liveUrl: "https://taskmanager-demo.com",
-    },
-    {
-      title: "AI-Powered Chat Application",
-      description:
-        "Real-time chat application with AI-powered features like message translation, sentiment analysis, and smart replies.",
-      image: "/projects/chatapp.jpg",
-      technologies: ["React", "OpenAI", "WebSocket", "Node.js", "Redis"],
-      githubUrl: "https://github.com/yourusername/chatapp",
-      liveUrl: "https://chatapp-demo.com",
+      image: LMS,
+      technologies: ["Next js", "Postgres", "Shadcn", "Tailwind css"],
+      githubUrl: "https://github.com/amaank23/lms-platform",
+      liveUrl: "",
     },
   ];
 
@@ -67,7 +59,7 @@ const WorkSection = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-[300px] object-cover rounded-xl transition-transform duration-500 group-hover:scale-110"
+                    className="py-3 bg-[#4e47e53b] w-full h-[300px] object-contain rounded-xl transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
@@ -123,7 +115,7 @@ const WorkSection = () => {
         {/* View More Button */}
         <div className="text-center mt-16">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/amaank23"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline inline-flex items-center gap-2"

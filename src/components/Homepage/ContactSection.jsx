@@ -11,19 +11,19 @@ const ContactSection = () => {
       icon: <FaEnvelope className="text-2xl" />,
       label: "Email",
       value: "amaanwaseem24@gmail.com",
-      href: "mailto:amaanwaseem24@gmail.com",
+      href: "mailto:amaanwaseem24@hotmail.com",
     },
     {
       icon: <FaGithub className="text-2xl" />,
       label: "GitHub",
-      value: "github.com/yourusername",
-      href: "https://github.com/yourusername",
+      value: "github.com/amaank23",
+      href: "https://github.com/amaank23",
     },
     {
       icon: <FaLinkedin className="text-2xl" />,
       label: "LinkedIn",
-      value: "linkedin.com/in/yourusername",
-      href: "https://linkedin.com/in/yourusername",
+      value: "linkedin.com/in/aman-reactjs-developer",
+      href: "https://linkedin.com/in/aman-reactjs-developer",
     },
   ];
 
