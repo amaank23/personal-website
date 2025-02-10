@@ -4,19 +4,19 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 const WorkSection = () => {
   const projects = [
     {
-      title: "Modern E-commerce Platform",
+      title: "E-commerce Platform with Admin Portal",
       description:
-        "A full-stack e-commerce platform built with Next.js, featuring real-time inventory management, secure payments, and an intuitive admin dashboard.",
+        "A full-featured e-commerce platform with an integrated admin portal for product management, order tracking, and user analytics. The platform supports secure authentication, dynamic product listings, a seamless checkout process, and payment gateway integration. The admin dashboard enables efficient inventory control and order fulfillment.",
       image: "/projects/ecommerce.jpg",
       technologies: [
         "Next.js",
         "TypeScript",
         "Prisma",
-        "Stripe",
+        "Paypal",
         "Tailwind CSS",
       ],
       githubUrl: "https://github.com/yourusername/ecommerce",
-      liveUrl: "https://ecommerce-demo.com",
+      liveUrl: "",
     },
     {
       title: "Task Management System",
@@ -103,15 +103,17 @@ const WorkSection = () => {
                     <FaGithub />
                     <span>Code</span>
                   </a>
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary !px-4 !py-2 inline-flex items-center gap-2"
-                  >
-                    <FaExternalLinkAlt />
-                    <span>Live Demo</span>
-                  </a>
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary !px-4 !py-2 inline-flex items-center gap-2"
+                    >
+                      <FaExternalLinkAlt />
+                      <span>Live Demo</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
