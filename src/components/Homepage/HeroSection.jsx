@@ -153,7 +153,7 @@ const HeroSection = () => {
           {/* Social Links */}
           <div className="social-links flex justify-center gap-6 opacity-0 animate-fade-in">
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/amaank23"
               target="_blank"
               rel="noopener noreferrer"
               className="group"
@@ -162,7 +162,7 @@ const HeroSection = () => {
               <FaGithub className="text-text-secondary text-2xl transform transition-all duration-300 group-hover:text-primary group-hover:scale-125" />
             </a>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/aman-reactjs-developer/"
               target="_blank"
               rel="noopener noreferrer"
               className="group"

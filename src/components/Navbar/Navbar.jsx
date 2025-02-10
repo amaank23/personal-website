@@ -84,7 +84,7 @@ const Navbar = () => {
                   {item.label}
                 </a>
               ))}
-              <button
+              {/* <button
                 onClick={themeContext.toggleTheme}
                 className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
                 aria-label="Toggle theme"
@@ -94,7 +94,7 @@ const Navbar = () => {
                 ) : (
                   <FaMoon className="text-primary" size={20} />
                 )}
-              </button>
+              </button> */}
             </div>
 
             {/* Mobile Menu Button */}
@@ -144,7 +144,7 @@ const Navbar = () => {
                 {item.label}
               </a>
             ))}
-            <button
+            {/* <button
               onClick={() => {
                 themeContext.toggleTheme();
                 setIsOpen(false);
@@ -162,7 +162,7 @@ const Navbar = () => {
                   <span>Dark Mode</span>
                 </>
               )}
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
