@@ -1,7 +1,7 @@
 import React from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import Ecommerce from "./../../assets/work-1.png";
-import LMS from "./../../assets/work-2.png";
+import LMS from "./../../assets/work-2.webp";
 const WorkSection = () => {
   const projects = [
     {
